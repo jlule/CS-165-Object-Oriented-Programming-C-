@@ -1,0 +1,95 @@
+/***********************************************************************
+* Program:
+*    Assignment 01, GENETIC GENEALOGY
+*    Brother Comeau, CS165
+* Author:
+*    James Lule
+* Summary: 
+      The program asks for the original DNA and then compares
+      the individuals DNA tthe original DNA.
+*    Estimated:  5.0 hrs   
+*    Actual:     4.5 hrs
+*      Please describe briefly what was the most difficult part.
+        The most difficult part about writing the program was writing the compare
+        function and getting the arrays and loops to work
+************************************************************************/
+
+#include <iostream>
+#include<iomanip>
+using namespace std;
+
+/**********************************************************************
+ * Add text here to describe what the function "main" does. Also don't forget
+ * to fill this out with meaningful text or YOU WILL LOSE POINTS.
+ ***********************************************************************/
+
+void relatives(int relative, string name[])
+ {
+    for (int i = 0; i < relative; i ++)
+     {
+        cout << "Please enter the name of relative #" << i + 1  << ": ";  
+        cin >> name[i];
+     }
+}
+
+
+void getDNA(string name[], int relative, string DNA[])
+{
+    
+    for (int i = 0; i < relative; i++)
+    {
+        cout << "Please enter the DNA sequence for " << name[i] << ": ";
+        cin >> DNA[i];
+        
+    }    
+}
+
+void compareDNA( string DNA[],char original[], int relative,string name[])
+{
+    int count = 0;
+
+    
+    for (int i= 0; i < relative; i++)
+    {
+        count = 0;
+        
+        DNA[i];
+        
+        for(int j = 0; j < 10; j ++)
+        {
+           if(DNA[i][j] == original[j]) 
+           
+           {
+               count ++;
+               
+              
+           }
+            
+            
+        }
+        
+        cout << "Percent match for " << name[i] << ": " << count * 10 << "%"  << endl;
+    }
+  
+}
+
+int main()
+{
+    
+    char original[256];
+    int relative;
+    cout << "Enter your DNA sequence: ";
+    cin >> original;
+    cout<< "Enter the number of potential relatives: ";
+    cin >> relative;
+    cout << endl; 
+    string name[relative];
+    relatives(relative, name);
+    string DNA[relative];
+    cout << endl; 
+    getDNA(name, relative, DNA);
+    cout << endl; 
+    compareDNA(DNA,original,relative, name);
+    
+    return 0;
+}
