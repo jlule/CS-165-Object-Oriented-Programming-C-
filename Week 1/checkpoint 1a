@@ -1,0 +1,48 @@
+/***********************************************************************
+* Program:
+*    Checkpoint 01a
+*    Brother Comeau, CS165
+* Author:
+*   James Lule
+* Summary: 
+*    Summaries are not necessary for checkpoint assignments.
+* ***********************************************************************/
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+/**********************************************************************
+ * Function: main
+ * Purpose: This is the entry point and driver for the program.
+ * Write a C++ program to do the following tasks:
+    Display the text: Hello CS 165 World
+    Prompt the user for their first name
+    Prompt the user for their age
+    Display the user's name and age back to them.
+ ***********************************************************************/
+
+int main()
+{
+    int age;
+
+    char name[256];
+
+    cout << "Hello CS 165 World!\n";
+
+    cout << "Please enter your first name: ";
+
+    cin >> name;
+
+    cout << "Please enter your age: ";
+
+    cin >> age;
+
+    cout << endl;
+    
+    cout << "Hello " << name << ", you are " << age <<" years old." << endl;
+
+    return 0;
+
+}    
