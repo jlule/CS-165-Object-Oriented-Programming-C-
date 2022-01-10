@@ -1,0 +1,68 @@
+/***********************************************************************
+* Program:
+*    Checkpoint 01b,
+*    Brother Comeau, CS 165
+* Author:
+*    James Lule
+* Summary: 
+*    Summaries are not necessary for checkpoint assignments.
+* ***********************************************************************/
+
+#include <iostream>
+using namespace std;
+
+/**********************************************************************
+ * Function: main
+ * Purpose: This is the entry point and driver for the program.
+ ***********************************************************************/
+int getSize()
+{
+    int size;
+    cout << "Enter the size of the list: ";
+    cin >> size;
+    return size;
+    
+}
+
+
+void getList( int number[], int size)
+{
+    for(int i = 0; i < size;  i++)
+    {
+        cout << "Enter number for index " << i << ": ";
+        cin >> number[i];
+    }
+}
+
+void displayMultiples(int number[], int size)
+{
+
+   cout << "\n";
+   cout << "The following are divisible by 3:\n";
+     
+
+    for (int i = 0; i < size; i++)
+    {
+    
+        if ( number[i] % 3 == 0)
+            cout << number[i]  << endl;
+     
+    }
+    
+}
+
+
+int main()
+{
+    int size;
+    size = getSize();
+    
+    int number[20];
+    getList(number, size);
+    displayMultiples(number, size);
+    
+    
+    return 0;
+}
+
+
